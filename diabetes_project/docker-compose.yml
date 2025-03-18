@@ -1,0 +1,32 @@
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./backend:/app
+    restart: always
+    environment:
+      - FLASK_ENV=development
+      - FLASK_RUN_HOST=0.0.0.0  
+    networks:
+      - my_network
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3001:3001"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - FLASK_API_URL=http://backend:5001  
+    networks:
+      - my_network
+
+networks:
+  my_network:

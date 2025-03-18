@@ -1,0 +1,22 @@
+# 📌 Flask và các thư viện hỗ trợ API
+flask
+flask-cors
+flask-restful
+
+# 📌 Machine Learning và Deep Learning
+tensorflow
+numpy
+pandas
+scikit-learn
+joblib
+
+# 📌 Bảo mật và xử lý dữ liệu
+python-dotenv
+requests
+
+# 📌 Cơ sở dữ liệu (nếu cần dùng SQLite hoặc PostgreSQL)
+sqlalchemy
+psycopg2-binary
+
+# 📌 Debugging & Công cụ phát triển
+ipython

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự đoán bệnh tiểu đường</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Dự đoán bệnh tiểu đường</h2>
+    <form id="predict-form">
+        <div class="input-icon tooltip">
+            <i class="fas fa-baby"></i>
+            <input type="number" name="Pregnancies" placeholder="Số lần mang thai" required>
+            <span class="tooltiptext">Số lần mang thai của bệnh nhân</span>
+        </div>
+        
+        <div class="input-icon tooltip">
+            <i class="fas fa-tint"></i>
+            <input type="number" name="Glucose" placeholder="Đường huyết (mg/dL)" required>
+            <span class="tooltiptext">Nồng độ glucose trong máu (mg/dL)</span>
+        </div>
+        
+        <div class="input-icon tooltip">
+            <i class="fas fa-heartbeat"></i>
+            <input type="number" name="BloodPressure" placeholder="Huyết áp (mm Hg)" required>
+            <span class="tooltiptext">Huyết áp tâm trương (mm Hg)</span>
+        </div>
+        
+        <div class="input-icon tooltip">
+            <i class="fas fa-ruler-vertical"></i>
+            <input type="number" name="SkinThickness" placeholder="Độ dày nếp gấp da (mm)" required>
+            <span class="tooltiptext">Độ dày nếp gấp da vùng cơ tam đầu (mm)</span>
+        </div>
+        
+        <div class="input-icon tooltip">
+            <i class="fas fa-syringe"></i>
+            <input type="number" name="Insulin" placeholder="Insulin (mu U/ml)" required>
+            <span class="tooltiptext">Insulin trong huyết thanh (mu U/ml)</span>
+        </div>
+        
+        <div class="input-icon tooltip">
+            <i class="fas fa-weight"></i>
+            <input type="number" step="0.1" name="BMI" placeholder="Chỉ số khối cơ thể BMI" required>
+            <span class="tooltiptext">Chỉ số khối cơ thể (kg/m²)</span>
+        </div>
+        
+        <div class="input-icon tooltip">
+            <i class="fas fa-dna"></i>
+            <input type="number" step="0.01" name="DiabetesPedigreeFunction" placeholder="Chỉ số di truyền tiểu đường" required>
+            <span class="tooltiptext">Hàm số di truyền tiểu đường</span>
+        </div>
+        
+        <div class="input-icon tooltip">
+            <i class="fas fa-user"></i>
+            <input type="number" name="Age" placeholder="Tuổi (năm)" required>
+            <span class="tooltiptext">Tuổi (năm)</span>
+        </div>
+        
+        <button type="submit">Dự đoán <i class="fas fa-arrow-right"></i></button>
+    </form>
+    
+    <div class="loader" id="loading-spinner"></div>
+    
+    <div class="prediction-card" id="prediction-result">
+        <h3>Kết quả dự đoán</h3>
+        <div class="prediction-detail">
+            <span class="prediction-label">Chẩn đoán:</span>
+            <span class="prediction-value" id="diagnosis"></span>
+        </div>
+        <div class="prediction-detail">
+            <span class="prediction-label">Độ tin cậy:</span>
+            <span class="prediction-value" id="confidence"></span>
+        </div>
+        <div class="risk-meter">
+            <div class="risk-level" id="risk-indicator"></div>
+        </div>
+        <div id="recommendation" class="prediction-detail">
+            <span class="prediction-label">Khuyến nghị:</span>
+            <span class="prediction-value" id="advice"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
